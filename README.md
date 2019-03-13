@@ -35,6 +35,8 @@ Explain:
 
 Todo: 
 
-Hook in logging 
+- Hook in logging
+- simplyfy method, variable names
+- look to add generators for the recursion 
 
 
