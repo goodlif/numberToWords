@@ -3,12 +3,13 @@ from dictionary.english_dictionary import EnglishDictionary as ed
 
 class WordsConverter:
     def __init__(self):
-        self.low = ed().low
-        self.medium = ed().medium
-        self.large = ed().large
-        self.zero = ed().zero
-        self.hundred_split = ed().hundred_split
-        self.word_split = ed().word_split
+        self.dictionary = ed()
+        self.low = self.dictionary.low
+        self.medium = self.dictionary.medium
+        self.large = self.dictionary.large
+        self.zero = self.dictionary.zero
+        self.hundred_split = self.dictionary.hundred_split
+        self.word_split = self.dictionary.word_split
 
     def run(self, num):
         try:
@@ -32,7 +33,6 @@ class WordsConverter:
 
     def to_words(self, num):
         try:
-                print(ed.large)
                 number = int(num)
              
                 if number == 0:

@@ -1,7 +1,4 @@
-from abc import ABC
-
-class Dictionary(ABC):
-
+class Dictionary():
     @property
     def low(self):
         pass
