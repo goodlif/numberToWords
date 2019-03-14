@@ -1,5 +1,5 @@
 import unittest
-import numberToWords.format_data as fd
+import numberToWords.utils.format_data as fd
 
 class TestFormatData(unittest.TestCase):
 

@@ -1,35 +1,25 @@
 import logging
-import functools
 
-class Logger:
+class Logger(object):
 
-    def create_logger(self):
-        logger = logging.getLogger("example_logger")
-        logger.setLevel(logging.INFO)
-    
-        # create the logging file handler
-        fh = logging.FileHandler("/data/test.log")
-    
-        fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        formatter = logging.Formatter(fmt)
-        fh.setFormatter(formatter)
-    
-        # add handler to logger object
-        logger.addHandler(fh)
-        return logger
-    
-    def exception(self, function):
+    def __init__(self, name='logger', level=logging.DEBUG):
+        self.logger = logging.getLogger(name)
+        self.logger.setLevel(level)
 
-        @functools.wraps(function)
-        def wrapper(*args, **kwargs):
-            logger = self.create_logger()
-            try:
-                return function(*args, **kwargs)
-            except:
-                
-                err = "There was an exception in  "
-                err += function.__name__
-                logger.exception(err)
-    
-                raise
-        return wrapper
+        fh = logging.FileHandler('%s.log' % name, 'w')
+        self.logger.addHandler(fh)
+
+        sh = logging.StreamHandler()
+        self.logger.addHandler(sh)
+
+    def debug(self, msg):
+        self.logger.debug(msg)
+
+    def info(self, msg):
+        self.logger.info(msg)
+
+    def warning(self, msg):
+        self.logger.warning(msg)
+
+    def error(self, msg):
+        self.logger.error(msg)

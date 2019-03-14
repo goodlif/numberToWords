@@ -1,4 +1,6 @@
-import re 
+import re
+from utils.logger import Logger
+
 class FormatData:
 
     def filter_text_to_Int(self, text):
@@ -25,10 +27,11 @@ class FormatData:
 
                     if self.look_for_white_space(before, after):
                         return text[0]
-                    else :
+                    else:
                         return 'Number Invalid'
         except:
-            print('Something has gone wrong with the formatting')
+            log = Logger()
+            log.error('Something has gone wrong with the formatting')
 
     def look_for_white_space(self, prev, post):
         if re.match('\s', prev) and re.match('\s', post):

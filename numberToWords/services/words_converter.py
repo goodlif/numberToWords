@@ -1,4 +1,4 @@
-
+from utils.logger import Logger
 from dictionary.english_dictionary import EnglishDictionary as ed
 
 class WordsConverter:
@@ -18,9 +18,11 @@ class WordsConverter:
             else:
                 return num
         except TypeError:
-            print('Type error. Please check that input is of type string')
+            log = Logger()
+            log.error('Type error. Please check that input is of type string')
         except NameError:
-            print('Number is not defined')
+            log = Logger()
+            log.error('Number is not defined as input to RUN method')
 
     def type_check(self, num):
         try:
@@ -29,7 +31,8 @@ class WordsConverter:
             else:
                 return False
         except:
-            print('Cannot conclude type')
+           log = Logger()
+           log.error('Cannot conclude type')
 
     def to_words(self, num):
         try:
@@ -54,7 +57,8 @@ class WordsConverter:
                     
                 return 'Number exists outside of upper limit'      
         except:
-            print('Process Error')
+           log = Logger()
+           log.error('Process Error')
 
     def get_divmod(self, dividend, divisor, magnitude):
         try:
@@ -67,7 +71,8 @@ class WordsConverter:
                 self.to_words(remainder),
             )
         except:
-            print('An exception occured trying to sort the string')
+           log = Logger()
+           log.error('An exception occured trying to sort the string')
 
     def join_str(self, *args):
         return ''.join(filter(bool, args))
