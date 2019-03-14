@@ -8,9 +8,9 @@ After reading the specification I decided to separate the application in various
 - Formatting Data (present number as string)
 - Conversion from string representation of a number to text. 
 
-Separating the application into components or modules allows for the code to be more segregated/loosely coupled allowing sub components to more closely fit the Sigle Responsibility Principle. 
+Separating the application into components or modules allows for the code to be more segregated/loosely coupled allowing sub components to more closely fit the Single Responsibility Principle. 
 
-I decided to create the main module 'number_to_words.py' in such a way that it had knowledge of all dependecies, repsonsible for the initialisation of each service or utility. This is what I would describe as a compositional approach to software development. 
+I decided to create the main module 'number_to_words.py' in such a way that it had knowledge of all dependecies, repsonsible for the initialisation of each service or utility. This is what I would describe as a compositional approach to development. 
 
 Assumptions: 
 - English input
