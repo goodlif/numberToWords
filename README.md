@@ -13,16 +13,16 @@ Separating the application into components or modules allows for the code to be 
 I decided to create the main module 'number_to_words.py' in such a way that it had knowledge of all dependecies, repsonsible for the initialisation of each service or utility. This is what I would describe as a compositional approach to development. 
 
 Assumptions: 
-English input
-English output
-No ordinal cases
-Lowercase
-numbers do not exceed 100 trillion
-no spaces between numbers e.g. 23 000
-no punctuation around numbers e.g. #34
-all numbers are integers
-all numbers are positive
-numbers like 1900 are displayed as one thousand nine hundred and not nineteen hundred
+- English input
+- English output
+- No ordinal cases
+- Lowercase
+- numbers do not exceed 100 trillion
+- no spaces between numbers e.g. 23 000
+- no punctuation around numbers e.g. #34
+- all numbers are integers
+- all numbers are positive
+- numbers like 1900 are displayed as one thousand nine hundred and not nineteen hundred
 
 Explain: 
 - Extendable dictionary (language)
