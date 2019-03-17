@@ -24,7 +24,7 @@ Assumptions:
 - All numbers are positive
 - Numbers like 1900 are displayed as one thousand nine hundred and not nineteen hundred
 
-When creating the dictionary for the language, I decided to create a type of abstract base class that could be inherited by a child class specific to a language making it easily extendable and maintainable. Inside the dictionary itself, should a developer want to increase the range, they should solely add to the large dictionary. 
+When creating the dictionary for the language, I decided to create a type of abstract base class that could be inherited by a child class specific to a language making it easily extendable and maintainable. Inside the dictionary itself, should a developer want to increase the range of values accepted, they should simply add to the large dictionary. 
 
 When filtering text we use a number of regex commands to specify what to look for. An 'integer' surrounded by white space, after the removal of fullstops, is considered correct. An integer with an order magnitude separated by white space creates an array of 2 integers 23 500 -> [23, 500] which is not allowed. 
 
